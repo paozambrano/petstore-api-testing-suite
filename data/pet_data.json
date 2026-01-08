@@ -1,0 +1,20 @@
+{
+    "id":12345,
+    "category":{
+        "id": 1,
+        "name": "Dogs"
+    },
+    "name":"Pao-puppy",
+    "photoUrls": [
+        "https://example.com/pao-puppy.jpg"
+    ],
+    "tags":[
+        {
+            "id":1,
+            "name": "automated -test"
+        }
+    ],
+    "status":"available"
+
+    
+}
