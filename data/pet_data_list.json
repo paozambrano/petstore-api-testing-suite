@@ -1,0 +1,18 @@
+[
+    {
+        "id": 111,
+        "name": "Rex",
+        "status": "available"
+    },
+    {
+        "id": 123,
+        "name": "Lunita",
+        "status": "pending"
+    },
+    {
+        "id": 333,
+        "name": "Simba",
+        "status": "sold"
+    }
+
+]
