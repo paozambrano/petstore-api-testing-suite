@@ -12,5 +12,5 @@
         },
         "status":{"type": "string"}
     },
-    "requiered":["id", "name", "status"]
+    "required":["id", "name", "status"]
 }
