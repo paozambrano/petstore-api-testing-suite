@@ -1,6 +1,7 @@
 from jsonschema import validate
 import json
 import os
+import pytest
 
 def test_create_and_get_pet(pet_api, pet_data):
     post_response = pet_api.create_pet(pet_data)
@@ -28,3 +29,17 @@ def test_pet_schema_validation(pet_api, pet_data):
 
     validate(instance=response_json, schema=schema)
     print("\nThe API contract is valid (JSON Schema matched)")
+
+
+def load_pet_data():
+    path = os.path.join(os.path.dirname(__file__), '../data/pet_data_list.json')
+    with open(path, "r") as f:
+        return json.load(f)
+    
+@pytest.mark.parametrize("pet_info", load_pet_data())
+def test_multiple_pets_creation(pet_api, pet_info):
+    response = pet_api.create_pet(pet_info)
+
+    assert response.status_code == 200
+    assert response.json()["name"] == pet_info["name"]
+    print(f"\n Successfully tested pet: {pet_info['name']}")
